@@ -7,6 +7,8 @@ export const gmMitt = mitt();
 export const enum gmMittType {
     /** webSocket链接成功 */
     connectSuccess = "connectSuccess",
+    /** webSocket错误事件 */
+    errMsg = "errMsg",
 }
 
 

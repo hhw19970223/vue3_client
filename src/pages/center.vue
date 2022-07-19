@@ -4,6 +4,7 @@
 		<el-button @click="get">测试请求get</el-button>
         <el-button @click="post">测试请求post</el-button>
         <el-button @click="socket">测试请求socket</el-button>
+         <el-button @click="socket2">测试请求socket2</el-button>
         <hhw-load-select v-model="v" :options="c_item" title="请选择要道具"></hhw-load-select>  
         <el-button @click="push(2)">2</el-button>
         <el-button @click="push(3)">3</el-button>  
@@ -14,7 +15,7 @@ import { reactive, watch, ref, onMounted, onUnmounted, computed } from 'vue';
 import vue_tool from '../utils/vue_tool';
 import date_tool from '../utils/date_tool';
 import { gmGet, gmPost} from '../api/axios';
-import { bulidSocket } from '../api/socket';
+import { bulidSocket, wsReq } from '../api/socket';
 import { gmMitt, gmMittType } from '../api/mitt';
 
 onMounted(() => {
@@ -56,6 +57,10 @@ function k(item) {
 
 function socket() {
     bulidSocket();
+}
+
+function socket2() {
+    wsReq("modules", "method", "arg");
 }
 
 </script>
